@@ -35,7 +35,7 @@ const Header = () => {
             </ul>
           </div>
 
-          <Link className='btn btn-ghost normal-case text-xl' to='/'>
+          <Link className='btn btn-ghost normal-case text-xl' to='/dashboard'>
             <img
               src='https://i.ibb.co/M68HY1R/Data-Glossary-Icons-Pie-Chart.jpg'
               width='50'
