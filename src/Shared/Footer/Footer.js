@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <div>
-      <footer className='footer footer-center p-10 footerbg text-primary-content'>
+      <footer className='footer footer-center p-10 bg-black text-primary-content'>
         <div>
           <img
             src='https://i.ibb.co/M68HY1R/Data-Glossary-Icons-Pie-Chart.jpg'

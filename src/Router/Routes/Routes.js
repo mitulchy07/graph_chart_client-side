@@ -3,12 +3,17 @@ import Main from '../../layout/Main';
 import City from '../../Pages/City/City';
 import Country from '../../Pages/Country/Country';
 import Dashboard from '../../Pages/Dashboard/Dashboard';
-import Login from '../../Shared/Login/Login';
+import Login from '../../Pages/Login/Login';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Main></Main>,
+    element: (
+      <PrivateRoute>
+        <Main></Main>
+      </PrivateRoute>
+    ),
     children: [
       {
         path: '/dashboard',
@@ -66,11 +71,11 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`https://server-side-zeta.vercel.app/date/${params.added}`),
       },
-      {
-        path: '/login',
-        element: <Login></Login>,
-      },
     ],
+  },
+  {
+    path: '/login',
+    element: <Login></Login>,
   },
 ]);
 

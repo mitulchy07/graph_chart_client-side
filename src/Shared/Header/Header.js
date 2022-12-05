@@ -1,9 +1,12 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const Header = () => {
+  const { user, logout } = useContext(AuthContext);
   return (
     <div>
-      <div className='navbar navbg'>
+      <div className='navbar bg-black text-white'>
         <div className='navbar-start'>
           <div className='dropdown'>
             <label tabIndex={0} className='btn btn-ghost lg:hidden'>
@@ -74,9 +77,15 @@ const Header = () => {
             <li>
               <Link to='/dashboard'>Dashboard</Link>
             </li>
-            <li>
-              <Link to='/login'>Login</Link>
-            </li>
+            {user?.uid ? (
+              <li>
+                <Link onClick={logout}>Logout</Link>
+              </li>
+            ) : (
+              <li>
+                <Link to='/login'>Login</Link>
+              </li>
+            )}
           </ul>
         </div>
         <div className='navbar-end mx-5 hidden lg:flex'></div>
