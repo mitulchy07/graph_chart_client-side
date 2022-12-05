@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Main from '../../layout/Main';
+import City from '../../Pages/City/City';
 import Country from '../../Pages/Country/Country';
 import Dashboard from '../../Pages/Dashboard/Dashboard';
 import Login from '../../Shared/Login/Login';
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/region/:region',
-        element: <Country></Country>,
+        element: <City></City>,
         loader: ({ params }) =>
           fetch(`https://server-side-zeta.vercel.app/region/${params.region}`),
       },

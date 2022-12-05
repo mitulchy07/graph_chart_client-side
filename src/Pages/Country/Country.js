@@ -6,11 +6,12 @@ import Diagram from '../Diagram/Diagram';
 
 const Country = () => {
   const data = useLoaderData();
-  const country = data[1].country;
+  const country = data[0].country ? data[0].country : 'India';
+  console.log(country);
 
   return (
     <div>
-      <div>
+      <div className='m-5'>
         <Diagram data={data} country={country}></Diagram>
       </div>
       <div className='grid md:grid-cols-3 gap-5 mx-5'>
